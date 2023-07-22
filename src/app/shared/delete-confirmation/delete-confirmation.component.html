@@ -1,0 +1,24 @@
+<div class="container">
+  <h1 mat-dialog-title>Confirm</h1>
+  <div mat-dialog-content>Are you sure you want to delete the record</div>
+  <div mat-dialog-actions style="margin-top: 15px">
+    <button
+      mat-raised-button
+      type="button"
+      color="warn"
+      mat-dialog-close
+      (click)="confirm()"
+      style="margin-right: 10px"
+    >
+      Close
+    </button>
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="confirm('delete')"
+      mat-dialog-close
+    >
+      Confirm
+    </button>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="inner-container">
+  <mat-card class="mat-elevation-z8">
+    <mat-card-title>{{
+      this.todoForm.value.id !== 0 ? "Update Todo" : "Add Todo"
+    }}</mat-card-title>
+    <mat-divider></mat-divider>
+    <form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
+      <div class="section">
+        <mat-form-field appearance="outline">
+          <mat-label>Title</mat-label>
+          <input matInput formControlName="title" />
+          <mat-error
+            *ngIf="
+              todoForm.get('title')?.touched &&
+              todoForm.get('title')?.hasError('required')
+            "
+            >Title is required</mat-error
+          >
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Description</mat-label>
+          <input matInput formControlName="description" />
+          <mat-error
+            *ngIf="
+              todoForm.get('description')?.touched &&
+              todoForm.get('description')?.hasError('required')
+            "
+            >Description is required</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <mat-divider></mat-divider>
+      <mat-card-actions alignment="right">
+        <button mat-raised-button color="primary" type="submit" [disabled]="todoForm.invalid">
+          {{ this.todoForm.value.id !== 0 ? "Update" : "Add" }}
+        </button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>

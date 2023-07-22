@@ -1,0 +1,16 @@
+.inner-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  mat-card {
+    width: 40%;
+    mat-card-title {
+      padding: 10px;
+    }
+  }
+  .section {
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+  }
+}
